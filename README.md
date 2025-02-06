@@ -11,9 +11,9 @@ git clone https://github.com/PedroRatti/pythonAPI.git cd seu-repositorio
 
 >Criar e ativar o ambiente virtual
 
-python -m venv .venv 
-source .venv/bin/activate # Mac/Linux 
-.venv\Scripts\activate
+python -m venv .venv  
+source .venv/bin/activate # Mac/Linux   
+.venv\Scripts\activate  
 
 >Instalar dependências
 
