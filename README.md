@@ -7,7 +7,7 @@ Ela oferece endpoints para recuperar todas as acomodações cadastradas, buscar 
 
 >Clonar repositório
 
-git clone https://github.com/seu-usuario/seu-repositorio.git cd seu-repositorio
+git clone https://github.com/PedroRatti/pythonAPI.git cd seu-repositorio
 
 >Criar e ativar o ambiente virtual
 
@@ -27,11 +27,11 @@ uvicorn main:app --reload
 
 >Construir a imagem Docker
 
-docker build -t minha-api-fastapi .
+docker build -t pythonAPI .
 
 >Rodar o container
 
-docker run -p 8000:8000 minha-api-fastapi
+docker run -p 8000:8000 pythonAPI
 
 ## Endpoints
 
