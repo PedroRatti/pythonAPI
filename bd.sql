@@ -1,4 +1,9 @@
+CREATE USER IF NOT EXISTS 'recrutador'@'localhost' IDENTIFIED BY 'recrutador';
+
 CREATE DATABASE `imoveis_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+GRANT ALL PRIVILEGES ON imoveis_db.* TO 'recrutador'@'localhost';
+FLUSH PRIVILEGES;
 
 CREATE TABLE `imoveis` (
   `id` int NOT NULL AUTO_INCREMENT,
