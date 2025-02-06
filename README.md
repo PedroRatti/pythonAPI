@@ -3,11 +3,14 @@
 Esta API foi desenvolvida utilizando **FastAPI** para facilitar o gerenciamento de acomodações.  
 Ela oferece endpoints para recuperar todas as acomodações cadastradas, buscar acomodações por **ID** e **filtrar por cidade**.
 
+# Como rodar o banco de dados localmente
+Execute os comandos do arquivo SQL para criação do banco de dados, criação do usuário, criação da tabela e preenchimento dos dados
+
 # Como rodar a API localmente
 
 >Clonar repositório
 
-git clone https://github.com/PedroRatti/pythonAPI.git cd seu-repositorio
+git clone https://github.com/PedroRatti/pythonAPI.git cd pythonAPI
 
 >Criar e ativar o ambiente virtual
 
