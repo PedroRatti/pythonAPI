@@ -10,38 +10,38 @@ Execute os comandos do arquivo SQL para criação do banco de dados, criação d
 
 >Clonar repositório
 
-git clone https://github.com/PedroRatti/pythonAPI.git cd pythonAPI
+`git clone https://github.com/PedroRatti/pythonAPI.git cd pythonAPI`
 
 >Criar e ativar o ambiente virtual
 
-python -m venv .venv  
-source .venv/bin/activate # Mac/Linux   
-.venv\Scripts\activate  
+`python -m venv .venv`  
+`source .venv/bin/activate # Mac/Linux`   
+`.venv\Scripts\activate`  
 
 >Instalar dependências
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 >Rodar a API
 
-uvicorn main:app --reload
+`uvicorn main:app --reload`
 
 ## Rodar com o Docker
 
 >Construir a imagem Docker
 
-docker build -t pythonAPI .
+`docker build -t pythonAPI .`
 
 >Rodar o container
 
-docker run -p 8000:8000 pythonAPI
+`docker run -p 8000:8000 pythonAPI`
 
 ## Endpoints
 
-|Método                |Endpoint                         |Descrição                        |
-|----------------|-------------------------------|-----------------------------|
-|GET			 |/acomodacoes            |Lista todas as acomodações            |
-|GET             |/acomodacoes?cidade={cidade desejada}            |Retorna as acomodações de acordo com a cidade escolhida            |
-|GET             |/acomodacoes/{id}|Retorna a acomodação que possui o ID pesquisado|
+| Método |Endpoint                         |Descrição                        |
+|--------|-------------------------------|-----------------------------|
+| GET	  |/acomodacoes            |Lista todas as acomodações            |
+| GET    |/acomodacoes?cidade={cidade desejada}            |Retorna as acomodações de acordo com a cidade escolhida            |
+| GET    |/acomodacoes/{id}|Retorna a acomodação que possui o ID pesquisado|
 
 
