@@ -1,11 +1,13 @@
-CREATE USER IF NOT EXISTS 'recrutador'@'localhost' IDENTIFIED BY 'recrutador';
+CREATE DATABASE IF NOT EXISTS `imoveis_db`
+/*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ 
+/*!80016 DEFAULT ENCRYPTION='N' */;
 
-CREATE DATABASE `imoveis_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE USER IF NOT EXISTS 'recrutador'@'%' IDENTIFIED BY 'recrutador';
+GRANT ALL PRIVILEGES ON imoveis_db.* TO 'recrutador'@'%';
 
-GRANT ALL PRIVILEGES ON imoveis_db.* TO 'recrutador'@'localhost';
-FLUSH PRIVILEGES;
+USE imoveis_db;
 
-CREATE TABLE `imoveis` (
+CREATE TABLE IF NOT EXISTS `imoveis` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `imagem` varchar(255) DEFAULT NULL,

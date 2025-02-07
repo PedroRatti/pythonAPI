@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: imoveis_db
+      MYSQL_USER: recrutador
+      MYSQL_PASSWORD: recrutador
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./bd.sql:/docker-entrypoint-initdb.d/bd.sql
+
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      retries: 5
+      start_period: 20s
+
+  backend:
+    build: ./
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=mysql+pymysql://recrutador:recrutador@db/imoveis_db
+    networks:
+      - app-network
+    entrypoint: [ "sh", "-c", "uvicorn main:app --host 0.0.0.0 --port 8000" ]
+
+
+networks:
+  app-network:
+
+volumes:
+  db-data:
