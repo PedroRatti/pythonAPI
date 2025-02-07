@@ -34,11 +34,11 @@ Execute os comandos do arquivo SQL(bd.sql) para criação do banco de dados, cri
 ## Executar com o Docker
 >Construir a imagem Docker
 
-`docker build -t pythonAPI .`
+`docker build -t pythonapi .`
 
 >Rodar o container
 
-`docker run -p 8000:8000 pythonAPI`
+`docker run -p 8000:8000 pythonapi`
 
 ## Endpoints
 
